@@ -1,0 +1,11 @@
+{
+  "name": "ProjectEuler",
+  "version": "0.0.1",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.6.3",
+    "grunt-contrib-qunit": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-coffee": "latest"
+  }
+}
