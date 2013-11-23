@@ -2,6 +2,9 @@
 module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
+
+    pkg: grunt.file.readJSON('package.json'),
+
     coffee:{
       options:{
         bare: true
@@ -35,22 +38,16 @@ module.exports = function(grunt) {
         src: 'Gruntfile.js'
       },
       lib_test: {
-        src: ['app/problems/**/*.js', 'app/tests/**/*.js']
+        src: ['app/problems/**/*.js']
       }
     },
     qunit: {
-      files: ['app/tests/**/*.html']
+      files: ['/app/tests/**/*.html']
     },
 
     watch: {
-      gruntfile: {
-        files: '<%= jshint.gruntfile.src %>',
-        tasks: ['jshint:gruntfile']
-      },
-      lib_test: {
-        files: '<%= jshint.lib_test.src %>',
-        tasks: ['jshint:lib_test', 'qunit']
-      }
+      files: ['/app/tests/**/*.coffee', '/app/problems/**/*.coffee'],
+      tasks: ['default']
     }
   });
 
@@ -62,5 +59,4 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', ['coffee', 'jshint', 'qunit']);
-
 };
