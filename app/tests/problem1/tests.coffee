@@ -1,4 +1,4 @@
-test "truthy?", ()->
-	expect 1
-	ok 1==2, "adds right test"
-	return
+assert = require "assert"
+describe "initial test", ->
+	it "should be truthy", ->
+		assert.equal 1,3

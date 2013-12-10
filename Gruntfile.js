@@ -37,12 +37,14 @@ module.exports = function(grunt) {
       gruntfile: {
         src: 'Gruntfile.js'
       },
-      lib_test: {
-        src: ['app/problems/**/*.js']
+      files: {
+        src: ['/app/problems/**/*.js']
       }
     },
-    qunit: {
-      files: ['/app/tests/**/*.html']
+    mocha: {
+      test:{
+        src: ['app/tests/**/*.html']
+      },
     },
 
     watch: {
@@ -52,11 +54,11 @@ module.exports = function(grunt) {
   });
 
   // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-qunit');
+  grunt.loadNpmTasks('grunt-mocha');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-coffee');
 
   // Default task.
-  grunt.registerTask('default', ['coffee', 'jshint', 'qunit']);
+  grunt.registerTask('default', ['coffee', 'jshint', 'mocha']);
 };
