@@ -4,6 +4,6 @@ assert = require("assert");
 
 describe("initial test", function() {
   return it("should be truthy", function() {
-    return assert.equal(1, 3);
+    return assert.equal(1, 1);
   });
 });

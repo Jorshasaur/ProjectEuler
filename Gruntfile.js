@@ -38,27 +38,34 @@ module.exports = function(grunt) {
         src: 'Gruntfile.js'
       },
       files: {
-        src: ['/app/problems/**/*.js']
+        src: ['app/problems/**/*.js']
       }
     },
-    mocha: {
-      test:{
-        src: ['app/tests/**/*.html']
+    
+    simplemocha: {
+      options: {
+        globals: ['should'],
+        timeout: 3000,
+        ignoreLeaks: false,
+        ui: 'bdd',
+        reporter: 'tap'
       },
+  
+      all: { src: ['app/tests/**/*.js'] }
     },
 
     watch: {
-      files: ['/app/tests/**/*.coffee', '/app/problems/**/*.coffee'],
+      files: ['app/tests/**/*.coffee', 'app/problems/**/*.coffee'],
       tasks: ['default']
     }
   });
 
   // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-mocha');
+  grunt.loadNpmTasks('grunt-simple-mocha');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-coffee');
 
   // Default task.
-  grunt.registerTask('default', ['coffee', 'jshint', 'mocha']);
+  grunt.registerTask('default', ['coffee', 'jshint', 'simplemocha']);
 };

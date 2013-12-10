@@ -6,6 +6,6 @@
     "grunt-contrib-jshint": "~0.6.3",
     "grunt-contrib-watch": "latest",
     "grunt-contrib-coffee": "latest",
-    "grunt-mocha": "~0.4.7"
+    "grunt-simple-mocha": "latest"
   }
 }
