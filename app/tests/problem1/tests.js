@@ -1,15 +1,30 @@
-var assert, test;
+var Solution, assert;
 
 assert = require("assert");
 
-test = require("../../problems/problem1/solution.js");
+Solution = require("../../problems/problem1/solution.js");
 
-describe("initial test", function() {
-  it("should be truthy", function() {
-    return test.testPrint();
+describe("Solution", function() {
+  it("should have factors of 3,5,6,9 below 10.", function() {
+    var solution;
+    solution = new Solution();
+    return assert.deepEqual(solution.findMultiples([3, 5], 1, 10).result, [3, 5, 6, 9]);
   });
-  assert.equal(1, 1);
-  return it("should have an error", function() {
-    return assert.equal("this is a string", "this is a string");
+  it("should not repeat factors.", function() {
+    var solution;
+    solution = new Solution();
+    return assert.deepEqual(solution.findMultiples([3, 5], 1, 18).result, [3, 5, 6, 9, 10, 12, 15]);
+  });
+  it("should calculate the sum of 3,5,6,9 to be 23.", function() {
+    var solution;
+    solution = new Solution();
+    solution.findMultiples([3, 5], 1, 10);
+    return assert.equal(solution.sum(), 23);
+  });
+  return it("should calculate multiples to 999 with a sum of 233168.", function() {
+    var solution;
+    solution = new Solution();
+    solution.findMultiples([3, 5], 1, 1000);
+    return assert.equal(solution.sum(), 233168);
   });
 });
