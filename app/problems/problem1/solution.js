@@ -3,13 +3,13 @@ var Solution;
 Solution = (function() {
   function Solution() {}
 
-  Solution.prototype.findMultiples = function(multiples, start, end) {
+  Solution.prototype.findMultiples = function(naturals, start, end) {
     var count, number, _i, _len;
     this.result = [];
     count = start;
     while (count < end) {
-      for (_i = 0, _len = multiples.length; _i < _len; _i++) {
-        number = multiples[_i];
+      for (_i = 0, _len = naturals.length; _i < _len; _i++) {
+        number = naturals[_i];
         if (count % number === 0) {
           this.result.push(count);
           break;

@@ -3,11 +3,11 @@
 
 class Solution
 
-    findMultiples: (multiples, start, end)->
+    findMultiples: (naturals, start, end)->
         @result = []
         count = start
         while count < end
-            for number in multiples
+            for number in naturals
                 if count % number is 0 
                     @result.push count
                     break
