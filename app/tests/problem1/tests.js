@@ -4,7 +4,7 @@ assert = require("assert");
 
 Solution = require("../../problems/problem1/solution.js");
 
-describe("Solution", function() {
+describe("Solution for Problem 1", function() {
   beforeEach(function() {
     return this.solution = new Solution();
   });

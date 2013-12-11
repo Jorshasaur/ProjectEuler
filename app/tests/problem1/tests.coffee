@@ -1,7 +1,7 @@
 assert = require "assert"
 Solution = require "../../problems/problem1/solution.js"
 
-describe "Solution", ->
+describe "Solution for Problem 1", ->
 	beforeEach ->
 		@solution = new Solution()
   
