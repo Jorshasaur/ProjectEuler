@@ -1,6 +1,5 @@
 /*global module:false*/
 module.exports = function(grunt) {
-  // Project configuration.
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
@@ -32,7 +31,9 @@ module.exports = function(grunt) {
         boss: true,
         eqnull: true,
         browser: true,
-        globals: {}
+        globals: {
+          console: true
+        }
       },
       gruntfile: {
         src: 'Gruntfile.js'
@@ -48,7 +49,7 @@ module.exports = function(grunt) {
         timeout: 3000,
         ignoreLeaks: false,
         ui: 'bdd',
-        reporter: 'tap'
+        reporter: 'spec'
       },
   
       all: { src: ['app/tests/**/*.js'] }
@@ -67,5 +68,5 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-coffee');
 
   // Default task.
-  grunt.registerTask('default', ['coffee', 'jshint', 'simplemocha']);
+  grunt.registerTask('default', ['coffee', 'simplemocha']);
 };
