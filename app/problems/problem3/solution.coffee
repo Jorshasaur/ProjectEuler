@@ -23,4 +23,28 @@ class Solution
             start++
         return primes
 
+    #When reducing a number to it's prime factors, you're complete when the final number is a prime
+    getPrimes: (number)->
+        end = @getHighestFactor number
+        primeRange = @getPrimeNumberRange 1, end
+        currentPrime = 0
+        primes = []
+        result = number
+
+        while not @isPrime result
+            current = primeRange[currentPrime]
+            if result % current == 0
+                primes.push current
+                result = result / current
+            else 
+                currentPrime++
+
+        primes.push result
+
+        return primes
+
+    getHighestFactor: (number)->
+        return Math.floor(Math.sqrt number)
+
+
 module.exports = Solution

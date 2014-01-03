@@ -37,6 +37,30 @@ Solution = (function() {
     return primes;
   };
 
+  Solution.prototype.getPrimes = function(number) {
+    var current, currentPrime, end, primeRange, primes, result;
+    end = this.getHighestFactor(number);
+    primeRange = this.getPrimeNumberRange(1, end);
+    currentPrime = 0;
+    primes = [];
+    result = number;
+    while (!this.isPrime(result)) {
+      current = primeRange[currentPrime];
+      if (result % current === 0) {
+        primes.push(current);
+        result = result / current;
+      } else {
+        currentPrime++;
+      }
+    }
+    primes.push(result);
+    return primes;
+  };
+
+  Solution.prototype.getHighestFactor = function(number) {
+    return Math.floor(Math.sqrt(number));
+  };
+
   return Solution;
 
 })();
