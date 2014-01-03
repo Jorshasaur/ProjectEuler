@@ -33,6 +33,11 @@ describe("Solution for Problem 3", function() {
     primes = this.solution.getPrimes(1375164);
     return assert.deepEqual(primes, [2, 2, 3, 3, 3, 7, 17, 107]);
   });
+  it("should find the prime factors of 13195", function() {
+    var primes;
+    primes = this.solution.getPrimes(13195);
+    return assert.deepEqual(primes, [5, 7, 13, 29]);
+  });
   return it("should find the largest prime factorization of 600851475143 to be 6857", function() {
     var highest, primes;
     primes = this.solution.getPrimes(600851475143);

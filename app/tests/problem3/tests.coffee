@@ -25,6 +25,10 @@ describe "Solution for Problem 3", ->
         primes = @solution.getPrimes 1375164
         assert.deepEqual primes, [2,2,3,3,3,7,17,107]   
 
+    it "should find the prime factors of 13195", ->
+        primes = @solution.getPrimes 13195
+        assert.deepEqual primes, [5,7,13,29]
+
     it "should find the largest prime factorization of 600851475143 to be 6857", ->
         primes = @solution.getPrimes 600851475143
         highest = primes[primes.length-1]
