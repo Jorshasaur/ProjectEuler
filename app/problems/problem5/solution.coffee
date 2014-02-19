@@ -21,7 +21,8 @@ class Solution
       if smallest % 2 == 0
         if @numberIsDivisibleByRange start, end, smallest
           counting = false
-        else smallest++
+        else
+          smallest++
       else
         smallest++
     return smallest
